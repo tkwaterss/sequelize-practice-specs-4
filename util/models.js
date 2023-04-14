@@ -17,5 +17,22 @@ module.exports = {
     username: DataTypes.STRING({length: 20}),
     password: DataTypes.STRING
   }),
-  
+  Product: db.define("product", {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+      type: DataTypes.INTEGER
+    },
+    name: DataTypes.STRING,
+    price: DataTypes.FLOAT
+  }),
+  Cart: db.define("cart", {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+      type: DataTypes.INTEGER
+    },
+  })
 };
