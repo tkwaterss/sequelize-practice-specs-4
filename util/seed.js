@@ -1,4 +1,4 @@
-const {Product} = require('./models');
+const { Product } = require("./models");
 
 const products = [
   { name: "Hamster", price: "12.99" },
@@ -9,12 +9,11 @@ const products = [
 ];
 
 const seed = async () => {
-    try {
-        await Product.bulkCreate(products)
-    }
-    catch (err) {
-        console.log(err)
-    }
-}
+  try {
+    await Product.bulkCreate(products);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-module.exports = seed
+module.exports = seed;
