@@ -20,7 +20,8 @@ module.exports = {
           include: [
             {
               model: Product,
-              attributes: ['name', 'price']
+              attributes: ['name', 'price'],
+              raw: true,
             },
             {
               model: User,
@@ -30,6 +31,12 @@ module.exports = {
           attributes: ['id']
         }
       )
+      let total = 0;
+      cart.forEach(item => {
+        total += +item.product.price
+        console.log(total);
+      })
+      cart.unshift(total);
       res.status(200).send(cart)
     }
     catch (err) {
@@ -37,4 +44,3 @@ module.exports = {
     }
   }
 }
-//figure out how to add up total cost for all products in cart

@@ -23,8 +23,8 @@ Product.hasMany(Cart);
 
 //!endpoints
 server.post('/register', register);
-server.post('/addItemToCart', addToCart)
-server.get('/checkout/:userId', checkout)
+server.post('/addItemToCart', addToCart);
+server.get('/checkout/:userId', checkout);
 
 
 // Database sync and seed
@@ -35,7 +35,6 @@ db
     .then(() => {
         //commenting this line in will seed the db with the seed data
         // seed()
-        // console.log('successful seed')
     })
     .catch((err) => console.log('could not connect'))
   //!Listen Statement  
